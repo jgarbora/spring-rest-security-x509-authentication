@@ -100,8 +100,7 @@ Run App:- **java -jar target/spring-boot-security-x509-server-app-0.0.1-SNAPSHOT
 Now You can load the above URL in your browser and see the output.
 We have done with x.509 Authentication with Spring Boot and Spring Security.
 
-
-Alternative if you already have a server key and certificate:
+### Alternative if you already have a server key and certificate:
 
 Import the certificate to the keystore
 Now, import the PKCS 12 certificate and the CA bundle file the keystore.

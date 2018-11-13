@@ -101,6 +101,20 @@ Now You can load the above URL in your browser and see the output.
 We have done with x.509 Authentication with Spring Boot and Spring Security.
 
 
+Alternative if you already have a server key and certificate:
+
+Import the certificate to the keystore
+Now, import the PKCS 12 certificate and the CA bundle file the keystore.
+ 
+Import the PKCS 12 certificate by executing the following command:
+ 
+    keytool -importkeystore -deststorepass [password] -destkeystore [filename-new-keystore.jks] -srckeystore [filename-new-PKCS-12.p12] -srcstoretype PKCS12
+Where the [password] is the password you specified when you created the private key.
+
+Import the CA bundle file by executing the following command:
+ 
+    keytool -import -alias bundle -trustcacerts -file [ca_bundle] -keystore [filename-new-keystore.jks]
+
 
 
 

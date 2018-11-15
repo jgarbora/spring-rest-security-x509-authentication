@@ -19,7 +19,7 @@ Server application that contains the REST api. this application will support for
 This directory contains the generated keystores, truststores and certificates for both server application and client application. 
 if you need you can use these generated artifacts for running this app. otherwise you can create your own set using following commands.
 
-# Alternative 1 self signed server certificate
+## Alternative 1 self signed server certificate
 
 Go to any directory where you need to create these files and execute following commands. 
 (alternatively you can change the path name of the files without going to any directory)
@@ -28,11 +28,9 @@ Go to any directory where you need to create these files and execute following c
 ##### 1) Generate server key and self signed server certificate
      keytool -genkey -alias serverkey -keystore serverkeystore.p12  -keyalg RSA -storetype PKCS12
 
-# Alternative 2 get a server certificate from Let's encrypt
+## Alternative 2 get a server certificate from Let's encrypt
 
 check below
-
-Port 80 should be open and free to use as Let's Encrypt runs a small http server behind the scene to prove whether you control your domain address
 
 ##### 2) Generate client key and self signed client certificate 
      keytool -genkey -alias clientkey -keystore clientkeystore.p12 -keyalg RSA -storetype PKCS12
@@ -141,12 +139,12 @@ We convert the keys to PKCS12 using OpenSSL in the terminal as follows.
 
     $ openssl pkcs12 -export -in fullchain.pem \ 
                  -inkey privkey.pem \ 
-                 -out keystore.p12 
+                 -out serverkeystore.p12 
                  -name tomcat \
                  -CAfile chain.pem \
                  -caname root
                  
- The file 'keystore.p12' with PKCS12 is now generated in '/etc/letsencrypt/live/seeld.eu'.
+ The file 'serverkeystore.p12' with PKCS12 is now generated in '/etc/letsencrypt/live/seeld.eu'.
  
 
 

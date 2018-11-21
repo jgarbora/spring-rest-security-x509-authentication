@@ -26,14 +26,14 @@ Go to any directory where you need to create these files and execute following c
 ###### e.g:-   keytool -genkey -alias serverkey -keystore   <**pathToServerKeyStore**>   -keyalg RSA -storetype PKCS12  
  
 ##### 1) Generate server key and self signed server certificate
-     keytool -genkey -alias serverkey -keystore serverkeystore.p12  -keyalg RSA -storetype PKCS12
+     keytool -genkey -alias serverkey -keystore serverkeystore.p12  -keyalg RSA -storetype PKCS12 -validity 3650
 
 ## Alternative 2 get a server certificate from Let's encrypt
 
 check below
 
 ##### 2) Generate client key and self signed client certificate 
-     keytool -genkey -alias clientkey -keystore clientkeystore.p12 -keyalg RSA -storetype PKCS12
+     keytool -genkey -alias clientkey -keystore clientkeystore.p12 -keyalg RSA -storetype PKCS12 -validity 3650
 
 ##### 3) Export the server certificate
 
